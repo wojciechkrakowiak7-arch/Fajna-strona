@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz</title>
+</head>
+<body>
+    <form>
+    <label for="username">Nazwa użytkownika</label>
+    <input id="username" placeholder="Tu wpisz nazwę użytkownika" minlength="5" maxlength="25" required>
+    <br>
+    <br>
+    <label for="password">Hasło</label>
+    <input type="password"id="password" minlength="5" maxlength="25" required>
+    <br>
+    <br>
+    <label for="wiek">Wiek</label>
+    <input id="wiek" type="number" min="5" max="120" value="18">
+    <br>
+    <br>
+    <label for="Birthday">Data urodzenia</label>
+    <input type="date" id="Birthday" required>
+    <br>
+    <br>
+    <label for="email">Email</label>
+    <input type="email" id="email" required>
+    <br>
+    <br>
+    <label for="numer telefonu">Numer telefonu</label>
+    <input type="tel" id="numer telefonu" pattern="\d{9}">
+    <br>
+    <br>
+    <table border="0">
+        <tr>
+            <th>Wybierz płeć:</th>
+        </tr>
+        <tr>
+            <th>
+                <label for="male">Mężczyzna</label>
+                <input id="male" type="radio" value="male" name="w">
+            </th>
+            <th>
+                <label for="female">Kobieta</label>
+                <input id="female" type="radio" value="female" name="w">
+            </th>
+        </tr>
+    </table>
+    <br>
+    <label for="pole">Nie wylogowywuj mnie</label>
+    <input id="pole" type="checkbox">
+    <br>
+    <br>
+    <input type="file" accept="video/*">
+    <br>
+    <br>
+    <label for="komentarz">Komentarz do zamówienia</label>
+    <br>
+    <textarea id="Komentarz" rows="8" cols="32">
+    </textarea>
+    <br>
+    <select id="opcje">
+        <option disabled selected>Wybierz opcję dostawy</option>
+        <option value="InPost">InPost</option>
+        <option value="DPD">DPD</option>
+        <option value="DHL">DHL</option>
+        <option value="Fedex">Fedex</option>
+    </select>
+     <br>
+     <br>
+    <input type="submit">
+     <input type="reset">
+    </form>
+</body>
+</html>
