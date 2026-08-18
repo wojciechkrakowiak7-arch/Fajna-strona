@@ -182,6 +182,79 @@
                     padding: 14px;
                 }
             }
+
+            .opinia h1 {
+                margin: 0 0 8px;
+                font-size: 28px;
+                color: #1f2937;
+            }
+
+            .opinia-opis {
+                margin: 0 0 25px;
+                color: #6b7280;
+                font-size: 15px;
+            }
+
+            .opinia textarea {
+                width: 100%;
+                min-height: 180px;
+                padding: 5px;
+
+                box-sizing: border-box;
+                resize: vertical;
+
+                font-family: inherit;
+                font-size: 15px;
+                line-height: 1.5;
+
+                color: #1f2937;
+                background: #f9fafb;
+
+                border: 1px solid #d1d5db;
+                border-radius: 12px;
+
+                outline: none;
+                transition: 0.2s;
+            }
+
+            .opinia textarea:focus {
+                background: #ffffff;
+                border-color: #4f46e5;
+                box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+            }
+
+            .opinia textarea::placeholder {
+                color: #9ca3af;
+            }
+
+            .opinia button {
+                margin-top: 18px;
+                padding: 12px 22px;
+
+                border: none;
+                border-radius: 10px;
+
+                background: #4f46e5;
+                color: white;
+
+                font-size: 15px;
+                font-weight: 600;
+
+                cursor: pointer;
+
+                transition: 0.2s;
+            }
+
+            .opinia button:hover {
+                background: #4338ca;
+                transform: translateY(-1px);
+
+                box-shadow: 0 5px 15px rgba(79, 70, 229, 0.25);
+            }
+
+            .opinia button:active {
+                transform: translateY(0);
+            }
         </style>
     </head>
 
@@ -217,9 +290,9 @@
                         <h4>
                             Witaj w AcadAid, znajdziesz tutaj bogactwo materiałów edukacyjnych, które pomogą Ci w nauce.
                             <br>
-                            Cieszę się, że mogę dzielić się moimi pomocami naukowymi z uczniami z całej Polski.
+                            Cieszymy się, że możemy dzielić się naszymi pomocami naukowymi z uczniami z całej Polski.
                             <br>
-                            Zachęcam do eksploracji i korzystania z dostępnych zasobów!
+                            Zachęcamy do eksploracji i korzystania z dostępnych zasobów!
                         </h4>
 
                         <br><br><br>
@@ -233,7 +306,6 @@
 
                     <div id="about">
                         <h1>O AcadAid</h1>
-                        <br>
                         <h4>
                             AcadAid to inicjatywa dedykowana wspieraniu uczących się w Polsce poprzez udostępnianie zasobów edukacyjnych.
                             <br>
@@ -241,6 +313,21 @@
                             <br>
                             Dołącz do naszej społeczności i rozwijaj się razem z nami!
                         </h4>
+                        <hr>
+                        <section class="opinia">
+                        <h1>Podziel się z nami swoją opinią!</h1>
+
+                        <p class="opinia-opis">
+                            Twoja opinia pomoże nam ulepszać AcadAid
+                        </p>
+                    
+                        <form action="https://formspree.io/f/meajpzjy" method="post">
+                            <textarea
+                                id="Komentarze"
+                                placeholder="Co sprawiło, że twoje doświadczenia z AcadAid były dobre? Co według ciebie wymaga poprawy? Pamiętaj, aby być pomocnym i konstruktywnym!" rows="8"></textarea>
+                            <button type="submit">Prześlij opinię</button>
+                        </form>
+                        </section>
                     </div>
 
                 </div>
