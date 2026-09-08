@@ -115,8 +115,21 @@
                 padding: 0;
             }
 
+            .galeria {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            .galeria img {
+                width: 24.5%;
+                max-width: 820px;
+                height: auto;
+            }
+
             /* Tablet i telefon */
-            @media (max-width: 768px) {
+                @media (max-width: 768px) {
 
                 #main {
                     flex-direction: column;
@@ -139,6 +152,16 @@
                 #nav button {
                     font-size: 16px;
                     padding: 14px;
+                }
+
+                .galeria {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .galeria img {
+                    width: 100%;
+                    max-width: 500px;
                 }
             }
 
@@ -189,6 +212,17 @@
 
                 <div id="content">
                     <h1 align="center">Historia</h1>
+
+                    <hr>
+                    <h2 align="center">Przykładowy konspekt</h2>
+                        <div class="galeria">
+                            <img src="media/Historia_ekspozycja/Historia_ekspozycja1.1.png" alt="Historia_ekspozycja1.1">
+                            <img src="media/Historia_ekspozycja/Historia_ekspozycja1.2.png" alt="Historia_ekspozycja1.2">
+                            <img src="media/Historia_ekspozycja/Historia_ekspozycja1.3.png" alt="Historia_ekspozycja1.3">
+                            <img src="media/Historia_ekspozycja/Historia_ekspozycja1.4.png" alt="Historia_ekspozycja1.4">
+                        </div>
+                    <br>
+                    <hr>
 
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
