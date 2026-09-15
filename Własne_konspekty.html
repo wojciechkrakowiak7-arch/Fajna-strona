@@ -220,6 +220,7 @@
 </style>
 </head>
 <body>
+    <h1 align="center">Formularz przesyłania materiałów edukacyjnych</h1>
     <form>
         
         <label for="name" >Imię:</label>
@@ -248,7 +249,7 @@
             </tr>
         </table>
         <br><br>
-        <label for="plik">Załącz plik (.pdf, .docx, .txt) z dysku</label>
+        <label for="plik">Załącz plik (.pdf, .docx, .txt, .pptx) z dysku</label>
         <input id="plik" type="file" required accept=".pdf, .docx, .txt, .pptx">
         <br><br>
 
@@ -275,16 +276,14 @@
         </style>
         
         <br><br>
-        <label for="zgoda_na_warunki_regulaminu">Oznajmiam, iż zapoznałem/zapoznałam się z powyższym dokumentem i wyrażam zgodę na wymienione w nim punkty</label>
+        <label for="zgoda_na_warunki_regulaminu">Oznajmiam, iż zapoznałem/zapoznałam się z powyższym dokumentem i wyrażam zgodę na wymienione w nim warunki</label>
         <input type="checkbox" id="zgoda_na_warunki_regulaminu" required>
         <br><br>
-        <label for="podpis">Napisz jak chcesz zostać podpisany/podpisana na swojej pracy: 
-            <br>
-            (UWAGA! W plikach .PDF autor sam dodaje podpis)
-
-        </label>
+        <label for="podpis">Napisz jak chcesz zostać podpisany/podpisana na swojej pracy:</label>
         <br><br>
         <textarea id="podpis" rows="8" cols="32"></textarea>
+         <br>
+            <p align="center">(UWAGA! W pliku .PDF prosimy o dodanie podpisu bezpośrednio w pliku. Dla pozostałych formatów brak wpisu oznacza brak podpisu na pracy.)</p>
         <br><br>
         <input value="Prześlij" type="submit">
         <input value="Zresetuj" type="reset">
