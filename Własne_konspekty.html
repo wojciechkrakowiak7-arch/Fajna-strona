@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wyślij swoją pracę!</title>
-
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <style>
     * {
         box-sizing: border-box;
@@ -221,7 +221,7 @@
 </head>
 <body>
     <h1 align="center">Formularz przesyłania materiałów edukacyjnych</h1>
-    <form>
+    <form id="upload-form">
         
         <label for="name" >Imię:</label>
         <input id="name" required>
@@ -250,7 +250,7 @@
         </table>
         <br><br>
         <label for="plik">Załącz plik (.pdf, .docx, .txt, .pptx) z dysku</label>
-        <input id="plik" type="file" required accept=".pdf, .docx, .txt, .pptx">
+        <input id="plik" name="file" type="file" required accept=".pdf, .docx, .txt, .pptx">
         <br><br>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -285,8 +285,68 @@
          <br>
             <p align="center">(UWAGA! W pliku .PDF prosimy o dodanie podpisu bezpośrednio w pliku. Dla pozostałych formatów brak wpisu oznacza brak podpisu na pracy.)</p>
         <br><br>
+
+        <div
+        class="cf-turnstile"
+        data-sitekey="0x4AAAAAAE9UEV1zWBnUAdRT">
+        </div>
+        <br>
+
         <input value="Prześlij" type="submit">
         <input value="Zresetuj" type="reset">
+
+        <p id="upload-status"></p>
     </form>
+
+    <script>
+const form = document.getElementById("upload-form");
+const statusElement = document.getElementById("upload-status");
+
+form.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    statusElement.textContent = "Przesyłanie...";
+
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch(
+            "https://acadaid-upload.wojciechkrakowiak7.workers.dev/",
+            {
+                method: "POST",
+                body: formData
+            }
+        );
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            statusElement.textContent =
+                result.error || "Nie udało się przesłać pliku.";
+
+            if (window.turnstile) {
+                turnstile.reset();
+            }
+
+            return;
+        }
+
+        statusElement.textContent =
+            "Praca została przesłana do weryfikacji.";
+
+        form.reset();
+
+        if (window.turnstile) {
+            turnstile.reset();
+        }
+
+    } catch (error) {
+        console.error(error);
+
+        statusElement.textContent =
+            "Nie udało się połączyć z serwerem.";
+    }
+});
+</script>
 </body>
 </html>
