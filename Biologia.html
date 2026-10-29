@@ -21,7 +21,10 @@
                 margin: 0;
             }
 
-            #heading {
+           #heading {
+                display: flex;
+                align-items: center;
+                gap: 10px;
                 background-color: rgb(210, 194, 168);
                 padding: 20px;
                 text-decoration: none;
@@ -29,6 +32,12 @@
                 font-size: 1.5em;
                 font-weight: bold;
                 font-family: serif;
+            }
+
+            #heading img {
+                display: block;
+                height: 50px;
+                width: auto;
             }
 
             #heading a:hover {
@@ -194,6 +203,7 @@
         <div id="container">
 
             <div id="heading">
+                <img src="media/Logo AcadAid-transparent.png" alt="Logo" height="50" />
                 <a href="index.html" target="_self" title="AcadAid (strona główna)">AcadAid</a>
             </div>
 
